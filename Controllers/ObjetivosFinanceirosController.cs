@@ -18,13 +18,21 @@ namespace PoupaDev.Controllers
         [HttpGet]
         public IActionResult GetTodos()
         {
-            return Ok();
+            var objetivos = _context.Objetivos;
+
+            return Ok(objetivos);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetPorId(int id)
         {
-            return Ok();
+            var objetivos = _context.Objetivos.SingleOrDefault(o => o.Id == id);
+
+            if (objetivos == null)
+            {
+                return NotFound();
+            }
+            return Ok(objetivos);
         }
 
         [HttpPost]
