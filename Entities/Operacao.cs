@@ -6,7 +6,6 @@ using PoupaDev.Enums;
 
 namespace PoupaDev.Entities
 {
-    
         public class Operacao
         {
             public Operacao(decimal valor, TipoOperacao tipo)
@@ -23,5 +22,4 @@ namespace PoupaDev.Entities
             public TipoOperacao Tipo { get; private set; }
             public DateTime DataOperacao { get; set; }
         }
-    
 }

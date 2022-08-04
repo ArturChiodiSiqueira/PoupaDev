@@ -7,7 +7,6 @@ using PoupaDev.Exceptions;
 
 namespace PoupaDev.Entities
 {
-    
         public class ObjetivoFinanceiro
         {
             public ObjetivoFinanceiro(string? titulo, string? descricao, decimal? valorObjetivo)
@@ -47,5 +46,4 @@ namespace PoupaDev.Entities
                 return totalDeposito - totalSaque;
             }
         }
-    
 }
