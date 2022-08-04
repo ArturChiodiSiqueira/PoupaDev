@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PoupaDev.Models;
+using PoupaDev.Persistence;
 
 namespace PoupaDev.Controllers
 {
@@ -7,6 +8,13 @@ namespace PoupaDev.Controllers
     [Route("api/objetivos-financeiros")]
     public class ObjetivosFinanceirosController : ControllerBase
     {
+        private readonly PoupaDevContext _context;
+
+        public ObjetivosFinanceirosController(PoupaDevContext context)
+        {
+            _context = context;
+        }
+
         [HttpGet]
         public IActionResult GetTodos()
         {
