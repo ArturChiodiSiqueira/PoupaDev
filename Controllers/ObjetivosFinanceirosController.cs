@@ -9,9 +9,9 @@ namespace PoupaDev.Controllers
     [Route("api/objetivos-financeiros")]
     public class ObjetivosFinanceirosController : ControllerBase
     {
-        private readonly PoupaDevContext _context;
+        private readonly PoupaDevDbContext _context;
 
-        public ObjetivosFinanceirosController(PoupaDevContext context)
+        public ObjetivosFinanceirosController(PoupaDevDbContext context)
         {
             _context = context;
         }
@@ -50,7 +50,7 @@ namespace PoupaDev.Controllers
         [HttpPost("{id}/Operecoes")]
         public IActionResult PostOperacao(int id, OperacaoImputModel model)
         {
-            var operacao = new Operacao(model.Valor, model.TipoOperacao);
+            var operacao = new Operacao(model.Valor, model.TipoOperacao, id);
 
             var objetivos = _context.Objetivos.SingleOrDefault(o => o.Id == id);
 
